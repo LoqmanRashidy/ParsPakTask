@@ -5,7 +5,6 @@ import { ApiUserService } from 'src/app/services/api-user.service';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 
 import { UserMapComponent } from '../user-map/user-map.component';
-import { UserDetailsComponent } from '../user-details/user-details.component';
 import { UsersModule } from '../users.module';
 
 @Component({

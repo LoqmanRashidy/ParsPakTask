@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserMapComponent } from './user-map/user-map.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -12,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [UserListComponent,UserDetailsComponent,UserMapComponent],
+  declarations: [UserListComponent,UserMapComponent],
   imports: [
     CommonModule,
     FormsModule,
