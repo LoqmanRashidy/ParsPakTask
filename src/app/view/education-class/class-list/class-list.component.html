@@ -1,0 +1,31 @@
+
+
+    <div class="content1">
+
+        <div *ngIf="Courses!=undefined && Courses.length>0" class="row">
+            <div *ngFor="let item of Courses; let i = index" class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+              <div class="class-item">
+                  <img [src]="courseBaseImagePath+item?.FileId+item?.Ext" class="courseimg">
+                  <div  class="teacher">
+                    <img [src]="personBaseImagePath+item?.TeacherFileId+item?.TeacherExt">
+                      <p>{{item.TeacherName + " " + item.TeacherLastName}}</p>
+                  </div>
+                      <h6 class="title">{{item.Title}}</h6>
+                      <!-- <p class="title">Time 12- 14</p> -->
+              
+                  <div class="price">
+                      <span>Price:${{item.Price}}</span>
+
+                      <a  [hidden]="item.IsReg" href="javascript:;" (click)="regClass(item.Id)" class="btn btn-success">Select This Class</a>
+                      <label class="lbltext" [hidden]="item.IsReg==false" id="lblmsg" name="lblmsg">Registered</label>
+                      <span  *ngFor='let in of rateCounter(item.Rate) ;let j = index' class="fa fa-star checked"></span>
+                      <span *ngFor='let in of rateCounter(5-item.Rate) ;let k = index' class="fa fa-star"></span>
+                   
+                  </div>
+              </div>
+            </div> 
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="button"  class="btn btn-success">Show Other Course</button>
+        </div>
+      </div>

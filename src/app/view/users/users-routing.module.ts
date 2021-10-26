@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserMapComponent } from './user-map/user-map.component';
-
+import { AuthGuard } from '../../core/services/auth/auth.guard';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-            {
-              path: '',
-              component:UserListComponent,
-              data: {
-                title: 'لیست کاربران '
-              }
-            },
-            {
-              path: 'usermap',
-              component:UserMapComponent,
-              data: {
-                title: 'مختصات جغرافیایی کاربران'
-              }
-            }
+  {
+    path: '',
+    data: {
+      title: 'مدیریت سطوح دسترسی'
+    },
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+          title: 'فرم ورود'
+        }
+      },
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class UsersRoutingModule { }

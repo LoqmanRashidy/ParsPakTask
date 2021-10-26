@@ -1,0 +1,54 @@
+<header class="header-section">
+    <div class="top-block">
+        <div class="container">
+            <div class="top-wrapper">
+                <div *ngIf="global.sessionPerson!= undefined && global.sessionPerson! null" class="top-left">
+                  
+                    <p><a class="btn" (click)="logout()">Log Out</a>{{"       Hi " + global.sessionPerson.Name + " " +global.sessionPerson.LastName}} Welcome</p>
+                </div>
+                <div class="top-mid">
+                        <p><i class="flaticon-phone-call"></i> <a href="tel:9702621413">(970) 262-1413</a></p>
+                        <p><i class="flaticon-email"></i> <a href="mailto:address@gmail.com">address@gmail.com</a></p>
+                 
+                </div>
+                <div class="top-left">
+                    <p>All course 28% off for <a href="#">Liberian people’s.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light contain-menu">
+      <div class="container-fluid">
+          <a href="#" class="navbar-brand"><img class="img1" src="assets/img/baner/logo.png" alt="baner"></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav">
+                  <a href="/classlist" class="nav-item nav-link active">Home</a>
+                  <a href="/classlist" class="nav-item nav-link">All Course</a>
+                  <a href="/classlist/1" class="nav-item nav-link">My Course</a>
+              </div>
+              <div class="navbar-nav ms-auto">
+                  <a href="/login" class="nav-item nav-link">SigIn</a>
+                  <a href="/registers/registerclass" class="nav-item nav-link">SigUp</a>
+              </div>
+          </div>
+      </div>
+  </nav>
+  
+  <div *ngIf="navFixed" [ngClass]="{'fixed':navFixed}" >
+    <div class="d-flex justify-content-between">
+      <ul>
+        <li><a href="#" class="navbar-brand"><img class="img1" src="assets/img/baner/logo.png" alt="Shape"></a></li>
+        <li><a href="/classlist" class="nav-item nav-link active">Home</a></li>
+        <li><a href="/classlist" class="nav-item nav-link">All Course</a></li>
+        <li><a href="/classlist/1" class="nav-item nav-link">My Course</a></li>
+        <li><a href="/login" class="nav-item nav-link">SigIn</a></li>
+        <li><a href="/registers/registerclass" class="nav-item nav-link">SigUp</a></li>
+      </ul>
+  </div>
+  </div>
+  
+  </header>
+   

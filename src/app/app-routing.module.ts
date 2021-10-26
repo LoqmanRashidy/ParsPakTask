@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout/default-layout/default-layout.component';
+import { LoginComponent } from './view/users/login/login.component';
 
 const routes: Routes = [
+
+ 
   {
+    
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'لیست کابران'
+      title: 'main layot'
     },
     children: [
       //-------------------------------new and main address------------------------
@@ -17,9 +21,31 @@ const routes: Routes = [
      // },
      {
        path:'',
-       loadChildren: () => import('./view/users/users.module').then(m => m.UsersModule)
+       loadChildren: () => import('./view/education-class/education-class.module').then(m => m.EducationClassModule)
+     },
+          {
+       path:'registers',
+       loadChildren: () => import('./view/registers/registers.module').then(m => m.RegistersModule)
      },
    ]
+  },
+  {
+
+    path: '',
+    component: DefaultLayoutComponent,
+    data: {
+      title: 'main layot'
+    },
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+          title: 'main layot'
+        },
+      }
+
+    ]
   }
 ];
 

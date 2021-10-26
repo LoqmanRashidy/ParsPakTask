@@ -1,0 +1,115 @@
+      <div class="content">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                  <label id="lblmsg" id="name"></label>
+            </div>
+        </div>
+      <div class="row form-group">
+        <div class="col-md-4 img">
+            <img src="../../../assets/img/baner/register-login.png"/>
+        </div>
+        <div class="col-md-8">
+          <form class="row g-3 form-inline">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="Name" class="form-label">Name</label>
+              <input  #Name="ngModel"
+              [(ngModel)]="model.Name"
+              name="Name"
+              id="Name" class="form-control" required>
+              <span *ngIf="!model.Name" class="errormessage">*</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="LastName" class="form-label">LastName</label>
+              <input  #LastName="ngModel"
+              [(ngModel)]="model.LastName"
+              name="LastName" required
+              id="LastName" class="form-control">
+              <span *ngIf="!model.LastName" class="errormessage">*</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="Mobile" class="form-label">MobilePhone</label>
+              <input  #Mobile="ngModel"
+              [(ngModel)]="model.Mobile" minlength="11" maxlength="11"
+              name="Mobile" required
+              id="Mobile" class="form-control">
+              <span *ngIf="!model.Mobile" class="errormessage">*</span>
+            </div>
+           
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="inputCity" class="form-label">Degree of education</label>
+
+                <select  class="form-control" id="grade" (change)="selectChange($event.target.value)">
+                    <option  *ngFor="let val of enumGradeType" [value]="val.Id" [id]='"val_"+val.Id'  [selected]="selected">{{val.Name}}</option>
+                  </select>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="Password"  class="form-label">Password</label>
+                <input type="password" minlength="6" class="form-control"  #Password="ngModel"
+                [(ngModel)]="model.Password"
+                name="Password"   id="Password" required>
+                <span *ngIf="!model.Password" class="errormessage">*</span>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="RePassword" class="form-label">RePassword</label>
+                <input type="Password"  minlength="6" class="form-control"  #RePassword="ngModel"
+                [(ngModel)]="model.RePassword"
+                name="RePassword" id="RePassword" [required]="comparePassword()">
+                <span *ngIf="!model.RePassword" class="errormessage">*</span>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="inputAddress" class="form-label">Birthdate</label>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd"
+                    (dateSelect)="onDateSelection($event)"  name="dp" required
+                           id="pd" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                    </div>
+                    <span *ngIf="!model.BirthDate" class="errormessage">*</span>
+                  </div>
+                </div>
+              </div>
+              <div  class="col-lg-8 col-md-6 col-sm-12">
+                <label for="Address" class="form-label">Address</label>
+              <input  #Address="ngModel"
+              [(ngModel)]="model.Address" required
+              name="Address"id="Address" class="form-control">
+              <span *ngIf="!model.Address" class="errormessage">*</span>
+              </div>
+                   
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <input type="checkbox" [checked]="model.IsVideo" (change)="model.IsVideo= !model.IsVideo" id="IsVideo" name="IsVideo">
+            <label for="inputCity" class="form-label">I am applying for educational videos </label>
+          </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <label class="form-label">Gender:</label> <br>
+              <input type="radio"   name="Gender" #Gender [value]="1"  [(ngModel)]="model.Gender" kendoRadioButton title="men"/>
+              <label  class="form-label">Men</label><br>
+         
+              <input type="radio" type="radio"   name="Gender" #Gender [value]="2"  [(ngModel)]="model.Gender"  title="women" kendoRadioButton />
+              <label  class="form-label">Vomen</label>
+              <br><br>
+              <button type="button"  [disabled]="validate() || comparePassword()" (click)="submit()" class="btn btn-success" id="inputCity">Register</button>
+              <button type="button" (click)="cancel()" class="btn btn-danger" id="inputCity">Cancel</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <span class="label">Profile Image</span>
+                     <div class="avatar-upload">
+                      <div class="avatar-edit">
+                        <input type='file' id="PicUpload" accept=".png, .jpg, .jpeg"  (change)="onFileChange($event)"/>
+                         <label for="PicUpload"></label>
+                      </div>
+                      <div class="avatar-preview">
+                        <div id="imgURL1" [style.backgroundImage]="'url('+ imgURL1 +')'">
+                        </div>
+                    </div>
+                  </div>
+          </div>
+          
+          </form>
+        </div>
+      </div>
+    
+    </div>
+

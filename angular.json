@@ -34,22 +34,21 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
-              "node_modules/ng-zorro-antd/resizable/style/index.min.css",
-              "node_modules/leaflet/dist/leaflet.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
         
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -107,14 +106,11 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
-              "node_modules/ng-zorro-antd/resizable/style/index.min.css",
-              "node_modules/leaflet/dist/leaflet.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
            
             ],
-            "scripts": []
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           }
         }
       }

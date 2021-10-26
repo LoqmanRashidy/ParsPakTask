@@ -1,0 +1,40 @@
+<app-register-baner></app-register-baner>
+<section class="container main-section">
+    
+  <div class="login">
+
+    <div class="row form-group">
+      <!-- <div class="col-md-4 img">
+          <img src="../../../assets/img/login/1.jpg"/>
+      </div> -->
+      <div class="col-md-12">
+        <form  #f="ngForm"  (submit)="onSubmit(f.form, model)" class="row g-3 form-inline">
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <label for="Name" class="form-label">Username</label>
+            <input #username="ngModel" id="username" type="text" required name="username" [(ngModel)]="model.username"
+            class="form-control" type="text" autocomplete="off"
+            placeholder="Name" name="username" />
+            <span *ngIf="!model.username" class="errormessage">*</span>
+          </div>
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <label for="LastName" class="form-label">Password</label>
+            <input #password="ngModel" id="password" type="password" required name="password" [(ngModel)]="model.password"
+            class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off"
+            placeholder="Name" name="password" />
+            <span *ngIf="!model.password" class="errormessage">*</span>
+          </div>
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <button #SubmitBtn type="submit" [disabled]="!model.password || !model.username" class="btn btn-success" id="inputCity">Login</button>
+            <button type="button" (click)="cancel()" class="btn btn-danger" id="inputCity">Cancel</button>
+          </div>
+  
+        
+        </form>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+</section>
